@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viphah Precious | Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      /* NAV */
+      nav {
+        background: #18003a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 40px;
+      }
+      .nav-brand {
+        color: #e9d5ff;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links li {
+        color: #c4b5fd;
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .nav-links li:hover {
+        color: #fff;
+      }
+
+      /* HERO */
+      .hero {
+        background: #18003a;
+        padding: 60px 40px 80px;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+      }
+      .hero-left {
+        flex: 1;
+      }
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(167, 139, 250, 0.18);
+        border: 1px solid rgba(167, 139, 250, 0.3);
+        color: #c4b5fd;
+        border-radius: 30px;
+        font-size: 12px;
+        padding: 5px 14px;
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-size: 48px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.15;
+        margin-bottom: 18px;
+      }
+      .hero h1 em {
+        color: #c084fc;
+        font-style: normal;
+      }
+      .hero-desc {
+        color: #c4b5fd;
+        font-size: 15px;
+        line-height: 1.85;
+        max-width: 400px;
+        margin-bottom: 28px;
+      }
+      .hero-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #7c3aed;
+        color: #fff;
+        border: none;
+        padding: 13px 28px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .hero-btn:hover {
+        background: #6d28d9;
+        transform: translateY(-2px);
+      }
+
+      /* AVATAR */
+      .avatar-ring {
+        width: 270px;
+        height: 270px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        border: 2px solid rgba(192, 132, 252, 0.45);
+        padding: 8px;
+      }
+      .avatar-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #2e0152;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .avatar-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .avatar-inner .avatar-icon {
+        font-size: 72px;
+        color: #c084fc;
+      }
+
+      /* RIBBON */
+      .ribbon {
+        background: #fff;
+        border-top: 1px solid #ede9fe;
+        border-bottom: 1px solid #ede9fe;
+        display: flex;
+      }
+      .ribbon-item {
+        flex: 1;
+        text-align: center;
+        padding: 20px 12px;
+        border-right: 1px solid #ede9fe;
+      }
+      .ribbon-item:last-child {
+        border-right: none;
+      }
+      .ribbon-icon {
+        font-size: 22px;
+        color: #7c3aed;
+        margin-bottom: 4px;
+      }
+      .ribbon-val {
+        font-size: 13px;
+        font-weight: 600;
+        color: #1e1b2e;
+      }
+      .ribbon-label {
+        font-size: 11px;
+        color: #888;
+        margin-top: 2px;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 60px 40px;
+      }
+      section.alt {
+        background: #f5f3ff;
+      }
+      section.white {
+        background: #fff;
+      }
+      .section-head {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .section-head h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e1b2e;
+        margin-bottom: 6px;
+      }
+      .section-head h2 span {
+        color: #7c3aed;
+      }
+      .section-head p {
+        font-size: 14px;
+        color: #888;
+      }
+
+      /* ABOUT CARD */
+      .about-card {
+        background: #fff;
+        border: 1px solid #ede9fe;
+        border-radius: 16px;
+        padding: 36px 40px;
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .blockquote {
+        font-size: 48px;
+        color: #c084fc;
+        line-height: 0.6;
+        font-family: Georgia, serif;
+        margin-bottom: 16px;
+      }
+      .about-text {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 22px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      .tag {
+        font-size: 12px;
+        padding: 5px 13px;
+        border-radius: 20px;
+        background: #ede9fe;
+        color: #4c1d95;
+        border: 1px solid #c4b5fd;
+      }
+
+      /* LIFESTYLE CARDS */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .lcard {
+        background: #fff;
+        border: 1px solid #ede9fe;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.25s;
+      }
+      .lcard:hover {
+        transform: translateY(-6px);
+      }
+      .lcard-top {
+        height: 148px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 54px;
+      }
+      .lcard-top.purple {
+        background: #ede9fe;
+      }
+      .lcard-top.teal {
+        background: #d1fae5;
+      }
+      .lcard-top.amber {
+        background: #fef3c7;
+      }
+      .lcard-body {
+        padding: 20px 22px 24px;
+      }
+      .lcard-body h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1e1b2e;
+        margin-bottom: 8px;
+      }
+      .lcard-body p {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 14px;
+      }
+      .chip {
+        display: inline-block;
+        font-size: 11px;
+        padding: 4px 11px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+      .chip-p {
+        background: #ede9fe;
+        color: #4c1d95;
+      }
+      .chip-t {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      .chip-a {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      /* CONTACT */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .ccard {
+        background: #fff;
+        border: 1px solid #ede9fe;
+        border-radius: 14px;
+        padding: 20px 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .ccard-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ede9fe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .ccard-icon i {
+        font-size: 18px;
+        color: #6d28d9;
+      }
+      .ccard-label {
+        font-size: 11px;
+        color: #888;
+        margin-bottom: 3px;
+      }
+      .ccard-val {
+        font-size: 13px;
+        font-weight: 600;
+        color: #1e1b2e;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #18003a;
+        color: #c4b5fd;
+        text-align: center;
+        padding: 26px 40px;
+        font-size: 14px;
+      }
+      footer strong {
+        color: #e9d5ff;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 24px 60px;
+        }
+        .hero-desc {
+          margin: 0 auto 24px;
+        }
+        .avatar-ring {
+          width: 200px;
+          height: 200px;
+        }
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          flex-direction: column;
+          gap: 12px;
+          padding: 16px 24px;
+        }
+        .ribbon {
+          flex-wrap: wrap;
+        }
+        .ribbon-item {
+          min-width: 50%;
+        }
+        section {
+          padding: 44px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-brand">Viphah Precious</div>
+      <ul class="nav-links">
+        <li>Home</li>
+        <li>About</li>
+        <li>Lifestyle</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-pill">
+          <i class="ti ti-sparkles"></i>
+          Student &nbsp;·&nbsp; Dreamer &nbsp;·&nbsp; Food Lover
+        </div>
+        <h1>Meet <em>Viphah</em><br />Precious</h1>
+        <p class="hero-desc">
+          A passionate student from Kaimosi University, with her roots in
+          Maseno. She believes in enjoying life, chasing dreams, and creating
+          beautiful memories.
+        </p>
+        <button class="hero-btn">
+          <i class="ti ti-user"></i>
+          Explore profile
+        </button>
+      </div>
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img src="viphah.jpeg" alt="Viphah Precious" />
+        </div>
+      </div>
+    </div>
+
+    <div class="ribbon">
+      <div class="ribbon-item">
+        <div class="ribbon-icon"><i class="ti ti-school"></i></div>
+        <div class="ribbon-val">Kaimosi University</div>
+        <div class="ribbon-label">Institution</div>
+      </div>
+      <div class="ribbon-item">
+        <div class="ribbon-icon"><i class="ti ti-map-pin"></i></div>
+        <div class="ribbon-val">Maseno, Kenya</div>
+        <div class="ribbon-label">Hometown</div>
+      </div>
+      <div class="ribbon-item">
+        <div class="ribbon-icon"><i class="ti ti-heart"></i></div>
+        <div class="ribbon-val">Calm & Ambitious</div>
+        <div class="ribbon-label">Personality</div>
+      </div>
+      <div class="ribbon-item">
+        <div class="ribbon-icon"><i class="ti ti-star"></i></div>
+        <div class="ribbon-val">Class of 2026</div>
+        <div class="ribbon-label">Year</div>
+      </div>
+    </div>
+
+    <section class="alt">
+      <div class="section-head">
+        <h2>About <span>her</span></h2>
+        <p>A little glimpse into her world</p>
+      </div>
+      <div class="about-card">
+        <div class="blockquote">"</div>
+        <p class="about-text">
+          Viphah Precious is a university student at Kaimosi University. She is
+          known for her calm personality, love for good food, appreciation for
+          comfort, and her unwavering ambition to achieve financial success and
+          live life to the fullest.
+        </p>
+        <div class="tags">
+          <span class="tag"
+            ><i
+              class="ti ti-tools-kitchen-2"
+              style="font-size: 12px; vertical-align: -1px; margin-right: 4px"
+            ></i
+            >Food enthusiast</span
+          >
+          <span class="tag"
+            ><i
+              class="ti ti-moon"
+              style="font-size: 12px; vertical-align: -1px; margin-right: 4px"
+            ></i
+            >Rest lover</span
+          >
+          <span class="tag"
+            ><i
+              class="ti ti-trending-up"
+              style="font-size: 12px; vertical-align: -1px; margin-right: 4px"
+            ></i
+            >Goal-getter</span
+          >
+          <span class="tag"
+            ><i
+              class="ti ti-leaf"
+              style="font-size: 12px; vertical-align: -1px; margin-right: 4px"
+            ></i
+            >Calm spirit</span
+          >
+          <span class="tag"
+            ><i
+              class="ti ti-school"
+              style="font-size: 12px; vertical-align: -1px; margin-right: 4px"
+            ></i
+            >Student</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="section-head">
+        <h2>Her <span>lifestyle</span></h2>
+        <p>The things that make Viphah, Viphah</p>
+      </div>
+      <div class="cards-grid">
+        <div class="lcard">
+          <div class="lcard-top purple">
+            <i
+              class="ti ti-tools-kitchen-2"
+              style="font-size: 54px; color: #6d28d9"
+            ></i>
+          </div>
+          <div class="lcard-body">
+            <h3>Food lover</h3>
+            <p>
+              She enjoys delicious meals and truly believes good food is the
+              secret to a happy soul.
+            </p>
+            <span class="chip chip-p"
+              ><i
+                class="ti ti-heart"
+                style="font-size: 11px; vertical-align: -1px; margin-right: 3px"
+              ></i
+              >Foodie life</span
+            >
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-top teal">
+            <i class="ti ti-moon" style="font-size: 54px; color: #065f46"></i>
+          </div>
+          <div class="lcard-body">
+            <h3>Sleep & relaxation</h3>
+            <p>
+              She deeply values rest and peaceful moments to recharge after
+              every beautiful, busy day.
+            </p>
+            <span class="chip chip-t"
+              ><i
+                class="ti ti-moon"
+                style="font-size: 11px; vertical-align: -1px; margin-right: 3px"
+              ></i
+              >Rest is sacred</span
+            >
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-top amber">
+            <i
+              class="ti ti-trending-up"
+              style="font-size: 54px; color: #92400e"
+            ></i>
+          </div>
+          <div class="lcard-body">
+            <h3>Dreams & success</h3>
+            <p>
+              She values financial growth and works steadily every day toward a
+              brighter, better future.
+            </p>
+            <span class="chip chip-a"
+              ><i
+                class="ti ti-star"
+                style="font-size: 11px; vertical-align: -1px; margin-right: 3px"
+              ></i
+              >Big dreams</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="section-head">
+        <h2>Get in <span>touch</span></h2>
+        <p>Reach out and say hello</p>
+      </div>
+      <div class="contact-grid">
+        <div class="ccard">
+          <div class="ccard-icon"><i class="ti ti-school"></i></div>
+          <div>
+            <div class="ccard-label">University</div>
+            <div class="ccard-val">Kaimosi University</div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon"><i class="ti ti-map-pin"></i></div>
+          <div>
+            <div class="ccard-label">Location</div>
+            <div class="ccard-val">Maseno, Kenya</div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon"><i class="ti ti-mail"></i></div>
+          <div>
+            <div class="ccard-label">Email</div>
+            <div class="ccard-val">viphah@example.com</div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon"><i class="ti ti-brand-instagram"></i></div>
+          <div>
+            <div class="ccard-label">Social</div>
+            <div class="ccard-val">@viphah.precious</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2026 <strong>Viphah Precious</strong> &nbsp;·&nbsp; Student
+        &nbsp;·&nbsp; Dreamer &nbsp;·&nbsp; Food Lover
+      </p>
+    </footer>
+  </body>
+</html>
